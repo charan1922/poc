@@ -14,7 +14,7 @@ class Dmc extends Component {
             name: '',
             password: '',
             email: '',
-            auth:''
+            auth: ''
         }
     }
 
@@ -65,24 +65,24 @@ class Dmc extends Component {
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(data)
         }).then(response => response.json())
-        .then(auth => this.setState({ auth }))
-        .catch(function (err) {
-            console.log(err)
-        });
-        if(this.state.auth == "true"){
+            .then(auth => this.setState({ auth }))
+            .catch(function (err) {
+                console.log(err)
+            });
+        if (this.state.auth == "true") {
             window.open("src/components/people/index.js");
         }
     }
     render() {
-        
+
         return (
             <>
                 <div class="login-page">
                     <div class="form">
                         {this.state.regist && !this.state.login && <form class="login-form" onSubmit={this.handleSubmit} autocomplete="off">
-                            <input type="text" autocomplete="off" onChange={this.handleChange} placeholder="username" name='name'  />
+                            <input type="text" autocomplete="off" onChange={this.handleChange} placeholder="username" name='name' />
                             <input type="password" autocomplete="off" onChange={this.handleChange} placeholder="password" name='password' />
-                            <input type="text" autocomplete="off" onChange={this.handleChange} placeholder="email" name='email'  />
+                            <input type="text" autocomplete="off" onChange={this.handleChange} placeholder="email" name='email' />
                             <button type="submit" className="btn btn-success" value="post" onClick={this.handleLogin}>Create</button>
                             <p class="message">Already registered? <a href="#" onClick={this.linkLogin}>Sign In</a></p>
                         </form>}
@@ -94,9 +94,8 @@ class Dmc extends Component {
                         </form>}
                     </div>
                     {this.state.auth}
-                    <Contant/>
                 </div>
-        <div>{this.state.msg}</div>
+                <div>{this.state.msg}</div>
             </>
         )
     }
