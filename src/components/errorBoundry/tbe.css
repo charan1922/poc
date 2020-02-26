@@ -1,0 +1,26 @@
+.msg span {
+    text-align: center;
+    font-family: Verdana;
+    font-size: Bold;
+    font-size: -webkit-xxx-large;
+    font-style: oblique;
+    position: absolute;
+     margin-right: -37px; 
+    padding: -4px;
+    margin-left: 320px;
+}
+.eror  {
+    text-align: center; 
+     font-family: Verdana; 
+    font-size: Bold;
+    font-size: -webkit-xxx-large;
+    font-style: oblique;
+    position: absolute;
+     margin-right: -37px; 
+    padding: -4px;
+     margin-left: 320px; 
+     margin-top: 118px; 
+    margin-top: 124px;
+    margin-right: x;
+    margin-left: 614px;
+}
