@@ -39,6 +39,14 @@ class Dmc extends Component {
 
     handleSubmit = (event) => {
         event.preventDefault()
+        const {name,password,email}=this.state;
+        if(name == ''){
+       alert('enter name')
+    }else if(password == ''){
+        alert('enter password')
+     }else if(email == ''){
+        alert('enter email')
+     }else{
         var data = {
             name: this.state.name,
             password: this.state.password,
@@ -52,6 +60,9 @@ class Dmc extends Component {
         }).catch(function (err) {
             console.log(err)
         });
+    
+    }
+    
     }
     handleAuth = (event) => {
         event.preventDefault()
@@ -69,20 +80,20 @@ class Dmc extends Component {
             .catch(function (err) {
                 console.log(err)
             });
-        if (this.state.auth == "true") {
-            window.open("src/components/people/index.js");
-        }
+            
     }
     render() {
-
+    if(this.state.auth === "true") {
+        this.props.history.push({pathname: "/contants"})
+    }
         return (
             <>
                 <div class="login-page">
                     <div class="form">
-                        {this.state.regist && !this.state.login && <form class="login-form" onSubmit={this.handleSubmit} autocomplete="off">
-                            <input type="text" autocomplete="off" onChange={this.handleChange} placeholder="username" name='name' />
-                            <input type="password" autocomplete="off" onChange={this.handleChange} placeholder="password" name='password' />
-                            <input type="text" autocomplete="off" onChange={this.handleChange} placeholder="email" name='email' />
+                        {this.state.regist && !this.state.login && <form class="login-form" onSubmit={this.handleSubmit} autoComplete="off">
+                            <input type="text" autoComplete="off" onChange={this.handleChange} placeholder="username" name='name' />
+                            <input type="password" autoComplete="off" onChange={this.handleChange} placeholder="password" name='password' />
+                            <input type="text" autoComplete="off" onChange={this.handleChange} placeholder="email" name='email' />
                             <button type="submit" className="btn btn-success" value="post" onClick={this.handleLogin}>Create</button>
                             <p class="message">Already registered? <a href="#" onClick={this.linkLogin}>Sign In</a></p>
                         </form>}

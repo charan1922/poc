@@ -12,7 +12,7 @@ class Index extends Component {
         return (
             <div>
                 <Switch>
-                <Route  path="/" component={Dmc} />
+                <Route exact path="/" component={Dmc} />
                 <Route path="/contants" component={Contant}/>
                 </Switch>
             </div>

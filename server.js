@@ -44,6 +44,7 @@ app.get('/api', (req, res) => {
 
 
 app.post('/new', function(req, res, next) {
+ 
  con.query('insert into smallapp(name,email,password) values("'+req.body.name+'","'+req.body.email+'","'+req.body.password+'");', function (error, results, fields) {
       if(error) throw error;
       res.send(JSON.stringify(results));
