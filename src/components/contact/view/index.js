@@ -2,6 +2,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as contactAction from '../actions/contact-action';
+import DatePickerInput from 'rc '
 
 class Contact extends Component {
 
@@ -75,6 +76,21 @@ class Contact extends Component {
         </form>
 
         {this.props.contacts.map((contact, i) => this.listView(contact, i))}
+        <div className='ui input'>
+            <DatePickerInput
+              disabled={this.state.disabled}
+              displayFormat='DD/MM/YYYY'
+              returnFormat='YYYY-MM-DD'
+              className='my-react-component'
+              onChange={(jsDate, dateString) => this.setState({ datePickerInputDate: dateString })}
+              onShow={this.log.bind(this, 'show')}
+              onHide={this.log.bind(this, 'hide')}
+              showOnInputClick
+              placeholder='placeholder'
+              locale='de'
+              onClear={this.onClear}
+            />
+          </div>
       </>
     )
   }

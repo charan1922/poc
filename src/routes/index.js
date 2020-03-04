@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import { Route, Switch, withRouter } from 'react-router-dom';
 import Dmc from '../components/small-app/index'
-import Contant from '../components/small-app/contants/index'
+// import Contant from '../components/small-app/contants/index'
+import Example from '../components/calander/calander'
 
 class Index extends Component {
     constructor(props){
@@ -12,8 +13,8 @@ class Index extends Component {
         return (
             <div>
                 <Switch>
-                <Route exact path="/" component={Dmc} />
-                <Route path="/contants" component={Contant}/>
+                <Route exact path="/" component={Example} />
+                {/* <Route path="/contants" component={Contant}/> */}
                 </Switch>
             </div>
         )
