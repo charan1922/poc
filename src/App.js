@@ -37,6 +37,20 @@ class App extends React.Component {
             horizontal: true,
           }
         },
+        grid: {
+          row: {
+            colors: ['#e5e5e5', 'transparent'],
+            opacity: 0.5
+          },
+          column: {
+            colors: ['#f8f8f8', 'transparent'],
+          },
+          xaxis: {
+            lines: {
+              show: true
+            }
+          }
+        },
         dataLabels: {
           formatter: function (value, { seriesIndex, dataPointIndex, w }) {
             return ''
@@ -46,7 +60,7 @@ class App extends React.Component {
         },
         yaxis: {
           labels: {
-            show: true,
+            show: false,
             style: {
               fontSize: '18px',
               fontWeight: 'bold',
@@ -72,35 +86,16 @@ class App extends React.Component {
           show: false
         },
         fill: {
-          type: "gradient",
+          type: 'solid',
           gradient: {
-            shadeIntensity: 1,
-            opacityFrom: 0.7,
-            opacityTo: 0.9,
-            colorStops: [
-              {
-                offset: 0,
-                color: "#EB656F",
-                opacity: 1
-              },
-              {
-                offset: 20,
-                color: "#FAD375",
-                opacity: 1
-              },
-              {
-                offset: 60,
-                color: "#61DBC3",
-                opacity: 1
-              },
-              {
-                offset: 100,
-                color: "#95DA74",
-                opacity: 1
-              }
-            ]
+            shade: 'light',
+            type: "vertical",
+            shadeIntensity: 0,
           }
-        },
+        }
+      },
+      grid: {
+        borderColor: '#6D6D6D'
       },
       dataLabels: {
         style: {
@@ -108,6 +103,14 @@ class App extends React.Component {
           fontWeight: 'bold',
         },
       },
+
+      // tooltip: {
+      //   custom: function({series, seriesIndex, dataPointIndex, w}) {
+      //     return '<div class="arrow_box">' +
+      //       '<span>' + series[seriesIndex][dataPointIndex] + '</span>' +
+      //       '</div>'
+      //   }
+      // },
 
       series: [{
         name: 'Research ',
@@ -167,7 +170,7 @@ class App extends React.Component {
           y: [new Date('2020-04-01').getTime(), new Date('2020-07-31').getTime()]
         }]
       },
-      
+
       ],
     }
   }
@@ -227,8 +230,49 @@ class App extends React.Component {
         </div>
 
 
-        <div id="chart">
-          <ReactApexChart options={this.state.options} series={this.state.series} type="rangeBar" height="700" />
+
+        <div className="apexcharts">
+          <div className="employees">
+            <div class="employee-name">
+              <div class="id">
+                <h4>pr2015amfg114</h4>
+                <p>Ranjith Ravi</p>
+              </div>
+              <div class="info">
+                <i class="fa fa-facebook"></i>
+              </div>
+            </div>
+            <div class="employee-name">
+              <div class="id">
+                <h4>ws015amfg114</h4>
+                <p>Sabyasachi kuila</p>
+              </div>
+              <div class="info">
+                <i class="fa fa-facebook"></i>
+              </div>
+            </div>
+            <div class="employee-name">
+              <div class="id">
+                <h4>ws015amfg115</h4>
+                <p>Rohit Shetty</p>
+              </div>
+              <div class="info">
+                <i class="fa fa-facebook"></i>
+              </div>
+            </div>
+            <div class="employee-name">
+              <div class="id">
+                <h4>ws015amfg115</h4>
+                <p>Rohit Shetty</p>
+              </div>
+              <div class="info">
+                <i class="fa fa-facebook"></i>
+              </div>
+            </div>
+          </div>
+          <div id="chart">
+            <ReactApexChart options={this.state.options} series={this.state.series} type="rangeBar" height="700" />
+          </div>
         </div>
       </>
     );
