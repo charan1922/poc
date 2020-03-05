@@ -72,13 +72,35 @@ class App extends React.Component {
           show: false
         },
         fill: {
-          type: 'gradient',
+          type: "gradient",
           gradient: {
-            shade: 'light',
-            type: "vertical",
-            shadeIntensity: 0,
+            shadeIntensity: 1,
+            opacityFrom: 0.7,
+            opacityTo: 0.9,
+            colorStops: [
+              {
+                offset: 0,
+                color: "#EB656F",
+                opacity: 1
+              },
+              {
+                offset: 20,
+                color: "#FAD375",
+                opacity: 1
+              },
+              {
+                offset: 60,
+                color: "#61DBC3",
+                opacity: 1
+              },
+              {
+                offset: 100,
+                color: "#95DA74",
+                opacity: 1
+              }
+            ]
           }
-        }
+        },
       },
       dataLabels: {
         style: {
