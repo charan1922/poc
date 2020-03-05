@@ -260,7 +260,7 @@ class App extends React.Component {
                 <i class="fa fa-facebook"></i>
               </div>
             </div>
-            <div class="employee-name">
+            {/* <div class="employee-name">
               <div class="id">
                 <h4>ws015amfg115</h4>
                 <p>Rohit Shetty</p>
@@ -268,7 +268,7 @@ class App extends React.Component {
               <div class="info">
                 <i class="fa fa-facebook"></i>
               </div>
-            </div>
+            </div> */}
           </div>
           <div id="chart">
             <ReactApexChart options={this.state.options} series={this.state.series} type="rangeBar" height="700" />
