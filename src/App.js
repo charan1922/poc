@@ -37,20 +37,20 @@ class App extends React.Component {
             horizontal: true,
           }
         },
-        grid: {
-          row: {
-            colors: ['#e5e5e5', 'transparent'],
-            opacity: 0.5
-          },
-          column: {
-            colors: ['#f8f8f8', 'transparent'],
-          },
-          xaxis: {
-            lines: {
-              show: true
-            }
-          }
-        },
+        // grid: {
+        //   row: {
+        //     colors: ['#e5e5e5', 'transparent'],
+        //     opacity: 0.5
+        //   },
+        //   column: {
+        //     colors: ['#f8f8f8', 'transparent'],
+        //   },
+        //   xaxis: {
+        //     lines: {
+        //       show: true
+        //     }
+        //   }
+        // },
         dataLabels: {
           formatter: function (value, { seriesIndex, dataPointIndex, w }) {
             return ''
